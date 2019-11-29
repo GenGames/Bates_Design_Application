@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Bates, Mason | Blackwatch Profile</title>
+    <link rel="stylesheet" href="CSS/main.css">
+    <link rel="shortcut icon" href="Images/Blackwatch_White.png">
+    <link href="https://fonts.googleapis.com/css?family=Audiowide|Big+Shoulders+Text&display=swap" rel="stylesheet">
+  </head>
+  <body class="pre-open" onload="StartUpFunction()">
+
+
+    <div id="Portfolio-wrapper">
+      <button id="pdf-button" class="pdf-button" type="button"  name="View as PDF"><a id="pdfLink"href="https://drive.google.com/drive/my-drive" target="_blank">View PDF</a></button>
+      <div id="Portfolio-content">
+        <img onclick="NextPage()" id="display-image" src="Portfolio_Items/Title-Page.png" alt="Cover Page">
+        <img onclick="RemoveFolder()" id="portfolio-cover" src="Portfolio_Items/Folder_Black_on_Grey.png" alt="Cover Page">
+        <h2 id="tutorialText">Click on the folder or the arrows to continue</h2>
+      </div>
+    </div>
+<!---->
+    <aside class="sidenav">
+      <nav>
+        <ul id="sidenav-list">
+          <li onclick="setPage(pages[0][1],0)"><a>test</a></li>
+          <li onclick="setPage(pages[1][1],1)"><a>test</a></li>
+          <li onclick="setPage(pages[2][1],2)"><a>test</a></li>
+          <li onclick="setPage(pages[3][1],3)"><a>test</a></li>
+          <li onclick="setPage(pages[4][1],4)"><a>test</a></li>
+          <li onclick="setPage(pages[5][1],5)"><a>test</a></li>
+          <li onclick="setPage(pages[6][1],6)"><a>test</a></li>
+          <li onclick="setPage(pages[7][1],7)"><a>test</a></li>
+          <li onclick="setPage(pages[8][1],8)"><a>test</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <footer>
+      <nav>
+        <ul class="footer">
+          <li><button class="page-nav-button" type="button" id="Back-button" onclick="PreviousPage()"><</button></li>
+          <li><button class="page-nav-button" type="button" id="Forward-button" onclick="NextPage()">></button></li>
+        </ul>
+
+      </nav>
+    </footer>
+    <script type="text/javascript" src="Scripts/pageManager.js"></script>
+  </body>
+</html>

@@ -1,0 +1,338 @@
+h2{
+  position: absolute;
+  top: 0;
+  font-size: 3em;
+  width: 65vw;
+  text-align: center;
+  color: rgb(100,100,100);
+  text-shadow: 0px 0px 8px rgba(0,0,0,.4);
+  animation-timing-function: cubic-bezier(1, 0.01, 0, 0.99);
+  -webkit-animation-name: Flashing; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+  -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
+  animation-name: Flashing;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+
+}
+
+body{
+  width: 99vw;
+  transition: 1s;
+  overflow-x: hidden;
+  height: auto;
+  background-color: rgb(15, 15, 15);
+  color: rgb(46, 255, 236);
+  text-shadow: 0px 0px 4px rgb(0, 140, 255);
+  padding: 0px;
+  font-family: 'Audiowide', cursive;
+  display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 9fr 1fr;
+    grid-template-areas:
+      "portfolio sidenav"
+      "bottomnav sidenav";
+}
+
+#Portfolio-content{
+  height: 94%;
+  width: 90%;
+}
+
+img{
+  width: 100%;
+}
+
+#portfolio-cover{
+  position: absolute;
+  left: 0;
+  width: 83vw;
+  top: 0%;
+  margin-left: 8px;
+  margin-top: 8px;
+  height: 94vw;
+  max-width: 100%;
+}
+
+#portfolio-cover.openned{
+  transition: 1s;
+  transform: rotate3d(0, 1, 0, 180deg);
+  left: -83vw;
+  transition-timing-function: cubic-bezier(1, 0.03, 1, 0.99);
+}
+
+#Portfolio-wrapper{
+  grid-area: portfolio;
+  background: url(Folder_White_on_Grey.png) no-repeat;
+  background-size: 100% 100%;
+  padding: 30px;
+  margin-right: 10px;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+nav{
+  text-align: center;
+}
+
+.sidenav{
+  grid-area: sidenav;
+}
+
+.sidenav nav{
+  position: fixed;
+  margin-top: auto;
+  border-radius: 30px;
+  border: 2px solid rgba(46, 255, 236,60);
+  box-shadow: 0px 0px 10px rgb(0, 140, 255);
+  padding: 20px;
+}
+
+.sidenav ul li{
+  list-style: none;
+  margin: 5px auto 5px auto;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+.sidenav ul li:hover{
+  color: rgb(223, 255, 252);
+  text-shadow: 0px 0px 8px rgb(143, 204, 254);
+  font-size: 1.01em;
+  transition: .3s;
+}
+li#selected{
+  color: rgb(223, 255, 252);
+  text-shadow: 0px 0px 8px rgb(143, 204, 254);
+  font-size: 1.01em;
+}
+
+ul{
+  padding: 0px;
+}
+
+footer{
+  grid-area: bottomnav
+}
+
+.page-nav-button{
+  font-family: 'Audiowide', cursive;
+  background-color: #ffffff20;
+  color: rgb(46, 255, 236);
+  text-shadow: 0px 0px 4px rgb(0, 140, 255);
+  border: none;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 2.67em;
+  border-radius: 5px;
+}
+.page-nav-button:hover{
+  color: rgb(223, 255, 252);
+  text-shadow: 0px 0px 8px rgb(143, 204, 254);
+  background-color: #ffffff35;
+  transition: .3s;
+}
+
+footer ul li{
+  display: inline-block;
+}
+button{
+  color: rgb(46, 255, 236);
+  border-radius: 5px;
+}
+button:hover{
+  color: rgb(223, 255, 252);
+  text-shadow: 0px 0px 8px rgb(143, 204, 254);
+}
+
+.pdf-button{
+  font-family: 'Audiowide', cursive;
+  background-color: #00000030;
+  border: 1px solid rgb(0, 24, 47);
+  box-shadow: 0px 0px 2px rgba(0, 0, 60,30);
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  margin-left: 2%;
+  width: fit-content;
+}
+
+.page-animate-away-start{
+  position: absolute;
+  left: 3vw;
+  width: 64.2vw;
+  animation-name: pushAway;
+  animation-duration: 1.4s;
+}
+
+.page-animate-towards-start{
+  position: absolute;
+  left: -120vw;
+  top: -108vw;
+  width: 64.3vw;
+  animation-name: pullTowards;
+  animation-duration: 1.3s;
+}
+
+@keyframes pushAway {
+  from{
+    position: absolute;
+    left: 3vw;
+  }
+  to{
+    transform: translate(-120vw, -108vw);
+  }
+}
+
+@keyframes pullTowards{
+  from{
+    position: absolute;
+    left: -120vw;
+    width: 64.3vw;
+  }
+  to{
+    transform: translate(124vw, 115.1vw);
+  }
+}
+
+@media screen and (max-width: 853px) {
+  body {
+    width: 98vw;
+    overflow-x: hidden;
+    display: grid;
+      grid-template-columns: 3fr 1fr;
+      grid-template-rows: 9fr 1fr;
+      grid-template-areas:
+        "portfolio portfolio"
+        "sidenav bottomnav";
+  }
+  #portfolio-cover{
+    width: 102vw;
+    height: 117vw;
+  }
+  .sidenav{
+    margin-top: 10px;
+  }
+  .sidenav ul li{
+    margin: 0px 7px 0px 7px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    display: inline-block;
+  }
+  .page-nav-button{
+    font-size: 2em;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  #portfolio-cover.openned{
+    left: -102vw;
+  }
+  .page-animate-towards-start{
+    width: 80vw;
+  }
+  .page-animate-away-start{
+    width: 80vw;
+  }
+  .sidenav nav{
+    padding: 10px;
+  }
+}
+@media screen and (max-width: 653px) {
+  body{
+    width: 96vw;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "portfolio"
+      "sidenav";
+  }
+  footer{
+    display: none;
+  }
+  .sidenav nav ul li{
+    padding: 5px;
+    margin: 2px;
+  }
+  .sidenav nav{
+    margin-left: 15%;
+    margin-right: 15%;;
+    padding: 0px;
+  }
+  .page-animate-towards-start{
+    width: 60vw;
+  }
+  .page-animate-away-start{
+    width: 60vw;
+  }
+}
+
+@keyframes Flashing {
+  0%{
+    opacity: 75%;
+    color: rgb(110,110,110);
+  }
+  6.25%{
+    opacity: 78%;
+    color: rgb(120,120,120);
+  }
+  12.5%{
+    opacity: 81.25%;
+    color: rgb(130,130,130);
+  }
+  18.75%{
+    opacity: 84.5%;
+    color: rgb(140,140,140);
+  }
+  25%{
+    opacity: 87.5%;
+    color: rgb(150,150,150);
+  }
+  31.25%{
+    opacity: 90.5%;
+    color: rgb(160,160,160);
+  }
+  37.5%{
+    opacity: 93.75%;
+    color: rgb(170,170,170);
+  }
+  43.75%{
+    opacity: 97.25%;
+    color: rgb(180,180,180);
+  }
+  50%{
+    opacity: 100%;
+    color: rgb(190,190,190);
+  }
+  56.25%{
+    opacity: 97.25%;
+    color: rgb(180,180,180);
+  }
+  62.5%{
+    opacity: 93.75%;
+    color: rgb(170,170,170);
+  }
+  69.75%{
+    opacity: 90.5%;
+    color: rgb(160,160,160);
+  }
+  75%{
+    opacity: 87.5%;
+    color: rgb(150,150,150);
+  }
+  81.25%{
+    opacity: 84.5%;
+    color: rgb(140,140,140);
+  }
+  87.5%{
+    opacity: 81.25%;
+    color: rgb(130,130,130);
+  }
+  93.75%{
+    opacity: 78%;
+    color: rgb(120,120,120);
+  }
+  100%{
+    opacity: 75%;
+    color: rgb(110,110,110);
+  }
+}
